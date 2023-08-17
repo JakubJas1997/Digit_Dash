@@ -173,6 +173,7 @@ def editProfile(request):
     else:
         new_coutry = request.POST.get('country')
         new_city = request.POST.get('city')
+        edit_profile_info = EditProfileForm(instance=profile_info)
         new_city_valid = validate_city(new_city)
         if not new_city_valid:
             error = 'City is not valid'
